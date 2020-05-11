@@ -1,0 +1,6 @@
+No. It's part of the Web platform API 
+The various objects that implement the Fetch API are "host objects". i.e. objects exposed to user and JavaScript that are provided by the application hosting the runtime.
+They only define the language (syntax and semantics) and a few builtin objects. You can implement a compliant JS engine it without providing fetch.
+
+The Fetch standard is part of the web platform, underlying several other web standards. It states that it "also defines the fetch() JavaScript API" - and it's just that, and API for the JavaScript language.
+example: navigator, ajax, fetch, etc., 
