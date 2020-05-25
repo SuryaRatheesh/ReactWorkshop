@@ -17,23 +17,33 @@ const contacts = [
 ];
 
 
-const ContactList = ({ contacts }) => {
-    return (
-        <table className="contacts-table">
-            <tbody>
-                <tr>
-                    <th>Name</th>
-                    <th>Email</th>
+const ContactList = (props) => {
+
+    const contact = props.contact;
+
+    return <table style={style}>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+            {contact.map((contact, i) => {
+                return <tr key={i}>
+                    <td> {contact.name}</td>
+                    <td>{contact.email}</td>
                 </tr>
-                {contacts.map((contact, i) => (
-                    <tr key={i}>
-                        <td>{contact.name}</td>
-                        <td>{contact.email}</td>
-                    </tr>
-                ))}
-            </tbody>
-        </table>
-    );
+            })}
+        </tbody>
+    </table>
 };
 
-export default ContactList;
+
+const contactData = <section id="contact-list">
+    <h1>Contacts</h1>
+    <ContactList contact={data}></ContactList>
+</section>
+
+const props = {
+    contact: data
+}
+ReactDOM.render(contactData, document.getElementById("react-container"));
